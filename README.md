@@ -4,4 +4,5 @@ This repository contains some lightweight addons for the AWS workshop ["Builing 
 
 ## Content
 
-- **Addon 01 - Simple Agent**: In this lab, you build a very simple GenAI agent that uses web search and math tools to solve moderately complex multi-step tasks using Amazon Bedrock and LangChain.
+- **[Addon 01 - Simple Agent](01-simple-agent)**: Build a very simple agent that uses web search and math tools to solve moderately complex multi-step tasks using Amazon Bedrock and LangChain.
+- **[Addon 02 - Custom Agent](02-custom-agent)**: Build your own custom tool

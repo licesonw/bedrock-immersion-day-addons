@@ -9,7 +9,7 @@ There are two primary categories of agents:
 - **Plan-and-execute agents**: Determine the complete order of actions initially, then implement them all without updating the plan.
 
 ## Lab walkthrough
-Follow the steps in this walkthrough and copy the code to a new python file in your lab environment. You can also just copy the content from the file [01-simple-agent.py](01-simple-agent.py).
+Follow the steps in this walkthrough and copy the code to a new python file in your lab environment. You can also just copy the content from the file [01-simple-agent.py](01-simple-agent.py). Make sure you install the requirements in [requirements.txt](requirements.txt). You can also go ahead directly and run `pip install duckduckgo-search` in your command line.
 
 ### Using ReAct: Synergizing Reasoning and Acting in Language Models Framework
 
@@ -63,7 +63,7 @@ search_tool = Tool(
 )
 ```
 
-Now, we create the math tool as well and create the agent object in LangChain that provide the two tools to the LLM at runtime.
+Now, we also create the math tool. We will use a custom prompt template to adjust the LLM output to our needs. Note that we ask the LLM to provide the answer in backticks, which helps us get better answers in combination with the step sequence setting in of the unique LLM setup for math we did above. After this, we finally create the agent object in LangChain that provide the two tools to the LLM at runtime.
 
 ```python
 # Math tool
@@ -121,7 +121,7 @@ Assistant:
 react_agent.agent.llm_chain.prompt.template = prompt_template
 ```
 
-We can now run the agent chain with a complex question and have it solve the question using its tools.
+We can now run the agent chain with a complex question and have it solve the question using its tools. Feel free to modify the question to investigate how your agent reacts.
 
 ```python
 question = "What is Knowledge Bases for Amazon Bedrock? Multiply the month (numerical) of the announcement date of the Knowledge Bases feature by 3."
